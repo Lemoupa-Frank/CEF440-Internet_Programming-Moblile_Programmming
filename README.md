@@ -1,6 +1,7 @@
 # CEF440-Internet_Programming-Moblile_Programmming
 # Group Members 16
 # Project 1
+# Ongoing Task: Task 2 and Task 3
 NOUGHUE LEMOUPA FRANK FE20A092.
 EMADE ROSINE NSAH FE20A032.
 TAJOUEGO DJUIDJA ESTRELA FE20A107.
