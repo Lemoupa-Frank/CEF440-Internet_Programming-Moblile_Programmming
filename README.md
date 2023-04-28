@@ -1,7 +1,7 @@
 # CEF440-Internet_Programming-Moblile_Programmming
 # Group  16
 # Project 1
-# Ongoing Task: Task 2 and Task 3
+# Ongoing Task: Task 3 (Design Diagrams)
 NOUGHUE LEMOUPA FRANK FE20A092.
 EMADE ROSINE NSAH FE20A032.
 TAJOUEGO DJUIDJA ESTRELA FE20A107.
