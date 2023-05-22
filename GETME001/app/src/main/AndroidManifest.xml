@@ -20,9 +20,6 @@
             android:name=".Book_Ride"
             android:exported="false" />
         <activity
-            android:name=".Request_Ride"
-            android:exported="false" />
-        <activity
             android:name=".Dashboard"
             android:exported="false" />
         <activity
