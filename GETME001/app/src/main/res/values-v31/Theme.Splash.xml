@@ -2,8 +2,6 @@
 <resources>
 
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
-        <!-- Set the splash screen Time-->
-        <item name="windowSplashScreenAnimationDuration">3000</item>
         <!-- Set the splash screen background to black -->
         <item name="windowSplashScreenBackground">@android:color/black</item>
         <!-- Use windowSplashScreenAnimatedIcon to add a drawable or an animated
