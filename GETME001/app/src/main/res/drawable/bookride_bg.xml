@@ -4,8 +4,11 @@
     android:layout_height="fill_parent"
     android:id="@+id/android_lar">
     <gradient
+        android:centerX="0.0"
+        android:centerY="0.0 "
         android:tileMode="repeat"
-        android:startColor="#C5BE12"
-        android:endColor="#000000"
+        android:startColor="@color/gold_prime"
+        android:centerColor="#C8C8C5"
+        android:endColor="@color/Yellow_prime"
         android:type="sweep" />
 </shape>
