@@ -1,6 +1,4 @@
-package com.example.getme001;
-
-import androidx.appcompat.app.AppCompatActivity;
+package Activity.Activity;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -8,12 +6,13 @@ import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Display;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.getme001.R;
 
 public class Sign_up extends AppCompatActivity {
 

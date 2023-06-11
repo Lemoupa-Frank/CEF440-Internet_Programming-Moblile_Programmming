@@ -1,8 +1,10 @@
-package com.example.getme001;
+package Activity.Activity;
+
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+import com.example.getme001.R;
 
 public class Dashboard extends AppCompatActivity {
 

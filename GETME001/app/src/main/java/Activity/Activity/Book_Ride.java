@@ -1,11 +1,10 @@
-package com.example.getme001;
+package Activity.Activity;
+
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
+import com.example.getme001.R;
 
 public class Book_Ride extends AppCompatActivity {
 
