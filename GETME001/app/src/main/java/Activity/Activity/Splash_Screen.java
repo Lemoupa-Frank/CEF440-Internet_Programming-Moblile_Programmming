@@ -1,10 +1,6 @@
-package com.example.getme001;
+package Activity.Activity;
 
 import static android.os.SystemClock.sleep;
-
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.splashscreen.SplashScreen;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -14,6 +10,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AnticipateInterpolator;
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.splashscreen.SplashScreen;
+
+import com.example.getme001.R;
 
 public class Splash_Screen extends AppCompatActivity {
 
