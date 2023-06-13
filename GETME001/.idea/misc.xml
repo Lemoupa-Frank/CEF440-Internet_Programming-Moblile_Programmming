@@ -16,9 +16,11 @@
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.16530797101449277" />
         <entry key="app/src/main/res/layout/verify_num.xml" value="0.17916666666666667" />
+        <entry key="app/src/main/res/menu/bottom_nav.xml" value="0.17916666666666667" />
+        <entry key="app/src/main/res/menu/menu_top.xml" value="0.17916666666666667" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main_menu"
+    tools:context="Activity.Activity.main_menu"
     android:id="@+id/drawer_view">
+
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         app:headerLayout="@layout/activity_header_nav_bar"
-        app:menu="@menu/menu_top"
-        android:id="@+id/nav_view">
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_top">
 
     </com.google.android.material.navigation.NavigationView>
 

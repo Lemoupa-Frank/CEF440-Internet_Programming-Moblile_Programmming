@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/black_black"
     android:orientation="vertical"
-    tools:context=".Book_Ride">
+    tools:context="Activity.Activity.Book_Ride">
 <LinearLayout
     android:gravity="center"
     android:layout_width="match_parent"

@@ -104,6 +104,7 @@
             android:inputType="number"
             android:padding="5dp" />
         <Button
+            android:id="@+id/verify_num"
             android:textColor="@color/black_black"
             android:text="Verify"
             android:background="@drawable/android_lar"

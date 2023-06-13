@@ -6,7 +6,7 @@
     android:background="@drawable/background"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".Book_Ride">
+    tools:context="Activity.Activity.Book_Ride">
     <LinearLayout
         android:gravity="center"
         android:layout_width="match_parent"
