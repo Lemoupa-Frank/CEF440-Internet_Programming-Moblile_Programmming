@@ -5,15 +5,20 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class PassengerModel {
+    @SerializedName("username")
+    @Expose
     private String username;
+    @SerializedName("password")
+    @Expose
     private String password;
+    @SerializedName("contact")
+    @Expose
     private String contact;
+    @SerializedName("pass_id")
+    @Expose
     private int pass_id;
 
     // Constructors
-    public PassengerModel() {
-    }
-
     public PassengerModel(String username, String password, String contact, int pass_id) {
         this.username = username;
         this.password = password;

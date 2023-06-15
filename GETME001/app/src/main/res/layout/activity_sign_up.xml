@@ -75,7 +75,7 @@
 
             <EditText
                 android:theme="@style/Widget.AppCompat.EditText"
-                android:id="@+id/Telephone"
+                android:id="@+id/phone_num"
                 android:gravity="center"
                 android:layout_width="320dp"
                 android:inputType="number"
