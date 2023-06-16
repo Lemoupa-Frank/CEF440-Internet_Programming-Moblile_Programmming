@@ -13,18 +13,16 @@ public interface Interface_Request {
     @POST("JETME/PHP/freelancedriver.php")
     @FormUrlEncoded
     Call<Void> createDriver(
-            @Field("Admin_id") String adminId,
+            @Field("Admin_id") int adminId,
             @Field("driver_licence") String driverLicense,
             @Field("FFpassword") String ffPassword,
             @Field("FF_nam") String ffName,
             @Field("Flatitudelocation") double latitudeLocation,
             @Field("Flongitudelocation") double longitudeLocation,
-            @Field("FL_name") String flName,
             @Field("freelance_id") String freelanceId,
             @Field("plate_no") String plateNo,
             @Field("seats") int seats
     );
-
 }
 //"JETMEPHP/PHP/new_user.php"
 //Call<Void> Send_Logs(@Body PassengerModel passenger);

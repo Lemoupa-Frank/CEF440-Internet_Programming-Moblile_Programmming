@@ -1,33 +1,49 @@
 package Activity.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.getme_driver.R;
 
+import API_Handler.Interface_Request;
+import API_Handler.Retrofit_Base_Class;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+
 public class Signup extends AppCompatActivity {
     TextView LOG; Button signup;
     EditText fname,lname,phone_num,companyname,licence_nu,carplate, enterpass, confirmpass;
     String Sfname,Slname,Sphone_num,Scompanyname,Slicence_nu,Scarplate, Senterpass, Sconfirmpass;
+    Retrofit retro_obj;
+    Spinner sort_spinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
+        retro_obj = Retrofit_Base_Class.getClient();
         fname = findViewById(R.id.firstname);
         lname = findViewById(R.id.lastname);
         phone_num = findViewById(R.id.phone_number);
-        companyname = findViewById(R.id.companyname);
         licence_nu = findViewById(R.id.uploadlicence);
         carplate = findViewById(R.id.carplate);
         enterpass = findViewById(R.id.enter_pass);
         confirmpass = findViewById(R.id.confirmpass);
-
+        sort_spinner = findViewById(R.id.sort_spiner);
+        ArrayAdapter<CharSequence> sort_adapter = ArrayAdapter.createFromResource(this,
+                R.array.sort_spinner_array, R.layout.spinner_design);
+        sort_adapter .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sort_spinner.setAdapter(sort_adapter );
         // Find the "Sign up" button and add a click listener
         signup = findViewById(R.id.signupbtn);
         LOG= findViewById(R.id.log);
@@ -41,17 +57,18 @@ public class Signup extends AppCompatActivity {
             Sfname = fname.getText().toString();
             Slname = lname.getText().toString();
             Sphone_num = phone_num.getText().toString();
-            Scompanyname = companyname.getText().toString();
             Slicence_nu = licence_nu.getText().toString();
             Scarplate = carplate.getText().toString();
             Senterpass = enterpass.getText().toString();
             Sconfirmpass = confirmpass.getText().toString();
+            Scompanyname =  sort_spinner.getSelectedItem().toString();
             if(Sfname.length() > 0 && Slname.length() > 0 && Sphone_num.length() > 0 && Scompanyname.length() > 0 && Slicence_nu.length() > 0 && Scarplate.length() > 0 && Senterpass.length() > 0 && Sconfirmpass.length() > 0 )
             {
                 Toast.makeText(Signup.this, "Ready", Toast.LENGTH_SHORT).show();
                 if(Senterpass.equals(Sconfirmpass))
                 {
                     Toast.makeText(Signup.this, "You can Create an Account", Toast.LENGTH_SHORT).show();
+                    Create_user(1,Slicence_nu,Senterpass,Slname,0,0,Sfname,Scarplate,4,Scompanyname);
                 }
                 else
                 {
@@ -64,5 +81,36 @@ public class Signup extends AppCompatActivity {
             }
         });
 
+    }
+    public void Create_user(int admin_id,String SSlicence_nu, String SSenterpass,String SSlname, double lat, double lon, String SSfname, String SScarplate, int seats, String Scompanyname )
+    {
+
+        Interface_Request interface_request = retro_obj.create(Interface_Request.class);
+        //Call<Void> passenger_call = interface_request.Send_Logs(passenger);
+        if(Scompanyname.equals("Free Lance")) {
+            Call<Void> passenger_call = interface_request.createDriver(admin_id, SSlicence_nu, SSenterpass, SSlname, 0, 0, SSfname, SScarplate, seats);
+            passenger_call.enqueue(new Callback<Void>() {
+                @Override
+                public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
+
+                    if (response.isSuccessful()) {
+                        Toast.makeText(Signup.this, "User Created", Toast.LENGTH_SHORT).show();
+
+                    } else {
+                        Toast.makeText(Signup.this, response.message(), Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+
+                @Override
+                public void onFailure(@NonNull Call<Void> call, Throwable t) {
+                    Toast.makeText(Signup.this, t.toString(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+        else
+        {
+            Toast.makeText(Signup.this, "Not a Free Lance",Toast.LENGTH_SHORT).show();
+        }
     }
 }

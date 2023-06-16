@@ -32,10 +32,6 @@ public class DriverModel {
     @Expose
     public String flName;
 
-    @SerializedName("freelance_id")
-    @Expose
-    public String freelanceId;
-
     @SerializedName("plate_no")
     @Expose
     public String plateNo;
@@ -46,8 +42,7 @@ public class DriverModel {
 
     // Constructor
     public DriverModel(String adminId, String driverLicense, String ffPassword, String ffName,
-                       double latitudeLocation, double longitudeLocation, String flName,
-                       String freelanceId, String plateNo, int seats) {
+                       double latitudeLocation, double longitudeLocation, String flName, String plateNo, int seats) {
         this.adminId = adminId;
         this.driverLicense = driverLicense;
         this.ffPassword = ffPassword;
@@ -55,7 +50,6 @@ public class DriverModel {
         this.latitudeLocation = latitudeLocation;
         this.longitudeLocation = longitudeLocation;
         this.flName = flName;
-        this.freelanceId = freelanceId;
         this.plateNo = plateNo;
         this.seats = seats;
     }

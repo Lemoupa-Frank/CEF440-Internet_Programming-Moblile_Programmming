@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center"
     android:background="@color/black"
@@ -131,21 +132,16 @@
 
     </LinearLayout>
 </LinearLayout>
-    <EditText
-        android:id="@+id/companyname"
+    <Spinner
+        android:layout_marginTop="20dp"
         android:gravity="center"
+        android:id="@+id/sort_spiner"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@drawable/android_lar"
-        android:hint="Company ID"
-        android:textColorHint="@color/black"
-        android:inputType="number"
-        android:textSize="16sp"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"/>
+        android:background="@drawable/android_lar"
+        android:layout_height="50dp"
+        android:spinnerMode="dropdown" />
     <EditText
         android:id="@+id/phone_number"
         android:gravity="center"
