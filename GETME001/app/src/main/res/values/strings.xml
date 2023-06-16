@@ -71,4 +71,13 @@
     <string name="create_password">Create Password</string>
     <string name="confirm_passwords">Confirm Password</string>
     <string name="verify">Verify</string>
+    <string name="welcome_to_our_support">WELCOME TO OUR SUPPORT</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="enter_your_tel">Enter your TEL</string>
+    <string name="enter">Enter</string>
+    <string name="contact">Contact</string>
+    <string name="send">Send</string>
+    <string name="abc12_gmail_com">abc12@gmail.com</string>
+    <string name="support_page">SUPPORT PAGE</string>
+    <string name="your_complain">Your Complain</string>
 </resources>

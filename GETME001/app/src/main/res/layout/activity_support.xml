@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/black"
+    tools:context="Activity.Activity.Login">
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:textAlignment="center"
+        android:text="@string/support_page"
+        android:textColor="@color/Yellow_prime"
+        android:textSize="30sp"
+        android:textStyle="bold"
+       />
+
+
+    <EditText
+        android:layout_width="320dp"
+        android:textAlignment="center"
+        android:layout_height="45dp"
+        android:background="@drawable/android_lar"
+        android:hint="@string/enter_your_name"
+        android:textColorHint="@color/black"
+        android:inputType="text"
+        android:textSize="20sp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="60dp"/>
+
+    <RelativeLayout
+        android:layout_width="320dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/android_lar">
+
+
+        <EditText
+            android:id="@+id/contact"
+            android:layout_width="320dp"
+            android:layout_height="45dp"
+            android:textAlignment="center"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/contact"
+            android:textColorHint="@color/black"
+            android:inputType="number"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+        <EditText
+            android:id="@+id/Complain"
+            android:layout_width="280dp"
+            android:layout_height="150dp"
+            android:textAlignment="center"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/white_white"
+            android:hint="@string/your_complain"
+            android:textColorHint="@color/black"
+            android:inputType="text"
+            android:layout_marginTop="20dp"
+            android:maxLines="8"
+            android:textSize="20sp"
+            />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="200dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/android_lar"
+        android:text="@string/send"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:backgroundTint="@color/Yellow_prime"
+        android:text="@string/abc12_gmail_com"
+        android:textColor="@color/Yellow_prime"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textStyle="bold" />
+</LinearLayout>
