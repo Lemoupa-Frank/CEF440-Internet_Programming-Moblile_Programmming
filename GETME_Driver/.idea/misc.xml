@@ -4,9 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/android_lar.xml" value="0.138" />
+        <entry key="app/src/main/res/layout/driver_dashboard.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/login.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/signup.xml" value="0.33" />
         <entry key="app/src/main/res/layout/spinner_design.xml" value="0.17916666666666667" />
+        <entry key="app/src/main/res/layout/splashscreen.xml" value="0.17916666666666667" />
       </map>
     </option>
   </component>
