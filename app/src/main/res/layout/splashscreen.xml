@@ -74,12 +74,12 @@
             android:paddingTop="200dp">
 
             <TextView
+                android:id="@+id/a"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:fontFamily="@font/bangers"
-                android:text="JetMe"
-                android:id="@+id/a"
+                android:fontFamily="sans-serif"
+                android:text="JETME"
                 android:textColor="@color/gold_prime"
                 android:textSize="100sp" />
         </RelativeLayout>
