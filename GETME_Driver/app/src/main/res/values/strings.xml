@@ -26,6 +26,32 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="navigation_drawer_open">open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="please_login_to_your_account">Please login to your account</string>
+    <string name="or">OR</string>
+    <string name="i_don_t_have_an_account">I don\'t have an account</string>
+    <string name="login_with_google">login with Google</string>
+    <string name="welcome_to_jetme">WELCOME TO JETME</string>
+    <string name="altitude">Altitude</string>
+    <string name="distance_to_location">Distance to location</string>
+    <string name="outside_temperature">outside temperature</string>
+    <string name="distance_to_locations">Distance to location</string>
+    <string name="_35000ft">35000ft</string>
+    <string name="_2054m">2054m</string>
+    <string name="_35deg">35deg</string>
+    <string name="_2h_30m">2h:30m</string>
+    <string name="input_four_digit_code">Input four Digit Code</string>
+    <string name="_681_88">681*****88</string>
+    <string name="_0">0</string>
+    <string name="__0">0</string>
+    <string name="_00">0</string>
+    <string name="_000">0</string>
+    <string name="create_password">Create Password</string>
+    <string name="confirm_passwords">Confirm Password</string>
+    <string name="verify">Verify</string>
     <string-array name="sort_spinner_array">
         <item>"Buea Council"</item>
         <item>"Free Lance"</item>
@@ -33,4 +59,5 @@
         <item>"BUEA DRIVERS GROUP"</item>
         <item>"Taxi Union"</item>
     </string-array>
+
 </resources>

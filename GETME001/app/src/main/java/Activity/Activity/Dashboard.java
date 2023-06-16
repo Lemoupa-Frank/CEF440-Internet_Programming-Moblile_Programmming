@@ -1,5 +1,7 @@
 package Activity.Activity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +15,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import android.widget.Toast;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -34,6 +37,7 @@ import java.util.Locale;
 public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, TextToSpeech.OnInitListener{
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+    BottomNavigationView navigationViewdown;
     ActionBarDrawerToggle toggle;
     private MapView maps;
 
@@ -82,6 +86,27 @@ public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, 
         toggle.syncState();
         setSupportActionBar(findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //nav down
+
+        navigationViewdown = findViewById(R.id.bottomNavigationView);
+        navigationViewdown.setOnNavigationItemSelectedListener(item -> {
+            int item1 = item.getItemId();
+            switch (item1)
+            {
+                case R.id.Book:
+                {
+                    startActivity(new Intent(Dashboard.this, Book_Ride.class));
+                    break;
+                }
+                case R.id.history:
+                {
+                    Toast.makeText(Dashboard.this, "Historypage selected", Toast.LENGTH_SHORT).show();
+                    break;
+                }
+            }
+            return false;
+        });
         // Set up the toolbar
 
         toggle.syncState();
@@ -90,21 +115,38 @@ public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, 
             int itemId = item.getItemId();
             switch (itemId)
             {
-                case 1000004:
+                case R.id.about:
                 {
-                    Toast.makeText(Dashboard.this, "Home selected", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(Dashboard.this, About_page.class));
                     break;
                 }
-                case 1000001:
+                case R.id.home:
                 {
-                    Toast.makeText(Dashboard.this, "Gallery selected", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(Dashboard.this, Dashboard.class));
                     break;
                 }
-                case 1000000:
+                case R.id.setting:
                 {
                     Toast.makeText(Dashboard.this, "Settings selected", Toast.LENGTH_SHORT).show();
                     break;
                 }
+                case R.id.support:
+                {
+                    Toast.makeText(Dashboard.this, "Support selected", Toast.LENGTH_SHORT).show();
+                    break;
+                }
+                case R.id.account:
+                {
+                    Toast.makeText(Dashboard.this, " selected", Toast.LENGTH_SHORT).show();
+                    break;
+                }
+                case R.id.logout:
+                {
+                    Toast.makeText(Dashboard.this, "Log out selected", Toast.LENGTH_SHORT).show();
+                    break;
+                }
+
+
             }
             drawerLayout.closeDrawer(GravityCompat.START);
             return false;
