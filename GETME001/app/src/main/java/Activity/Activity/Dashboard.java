@@ -164,7 +164,7 @@ public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, 
             if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                 Toast.makeText(this, "Language not supported", Toast.LENGTH_SHORT).show();
             } else {
-                speak("Welcome to JETME, Here, you can book a ride, view freelance taxi positions, see your ride history, determine your arrival time, and many more. ");
+                speak("Welcome to JET-ME, Here, you can book a ride, view freelance taxi positions, see your ride history, determine your arrival time, and many more. ");
             }
         } else {
             Toast.makeText(this, "TextToSpeech initialization failed", Toast.LENGTH_SHORT).show();
