@@ -96,7 +96,8 @@ public class Signup extends AppCompatActivity {
                     if (response.isSuccessful()) {
                         Toast.makeText(Signup.this, "User Created", Toast.LENGTH_SHORT).show();
 
-                    } else {
+                    } else
+                    {
                         Toast.makeText(Signup.this, response.message(), Toast.LENGTH_SHORT).show();
                     }
 
@@ -117,6 +118,7 @@ public class Signup extends AppCompatActivity {
 
                     if (response.isSuccessful()) {
                         Toast.makeText(Signup.this, "User Created", Toast.LENGTH_SHORT).show();
+                      //  Intent intent = new
 
                     } else {
                         Toast.makeText(Signup.this, response.message(), Toast.LENGTH_SHORT).show();
