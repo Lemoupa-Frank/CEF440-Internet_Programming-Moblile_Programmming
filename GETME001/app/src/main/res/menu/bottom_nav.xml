@@ -11,5 +11,6 @@
         android:icon="@drawable/baseline_history_24"
         android:id="@+id/history"/>
     <item android:title="Notifications"
-        android:icon="@drawable/baseline_notifications_none_24"/>
+        android:icon="@drawable/baseline_notifications_none_24"
+        android:id="@+id/notification"/>
 </menu>

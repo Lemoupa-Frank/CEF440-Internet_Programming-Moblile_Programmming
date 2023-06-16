@@ -76,12 +76,15 @@
     <string name="about_description1">Efficient Routing: Our intelligent routing algorithm calculates the fastest and most efficient routes to your destination. Whether you prefer public transportation, ride-sharing services, or other modes of transport, our app will guide you to your destination with ease.</string>
     <string name="about_description2">Comprehensive Transport Options: We understand that everyone has different preferences when it comes to transportation. Our app integrates multiple transport options, including buses, trains, taxis, and more. You can compare fares, travel times, and choose the mode of transport that suits your needs.</string>
 
-    <string name="about_description3">Timely Notifications: Stay informed throughout your journey with our timely notifications. Receive alerts about upcoming departures, delays, or any changes in your travel itinerary. We strive to keep you updated, ensuring a hassle-free travel experience.</string>s
+    <string name="about_description3">Timely Notifications: Stay informed throughout your journey with our timely notifications. Receive alerts about upcoming departures, delays, or any changes in your travel itinerary. We strive to keep you updated, ensuring a hassle-free travel experience.</string>
+    s
 
     <string name="about_description4">User-Friendly Interface: Our app features a user-friendly interface designed to make navigation effortless. It\'s intuitive, visually appealing, and accessible to users of all ages and technical backgrounds. We prioritize simplicity and ease of use, allowing you to focus on your travel plans.</string>
 
     <string name="about_description5">Personalization Options: Tailor the app to your preferences by saving your favorite locations, setting transportation preferences, and receiving personalized recommendations based on your travel history. We believe in providing a personalized experience that meets your specific needs.</string>
-
     <string name="about_description6">Reliable Support: Our dedicated support team is available to assist you whenever you need assistance or have any inquiries. We value your satisfaction and strive to provide prompt and reliable customer support.</string>
+<string name="name">Enter Names</string>
+    <string name="Message">Enter your message here</string>
+    <string name="customer_support">Contact US</string>
 
 </resources>
