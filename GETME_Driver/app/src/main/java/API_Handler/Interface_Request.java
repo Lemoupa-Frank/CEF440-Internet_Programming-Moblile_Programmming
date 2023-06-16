@@ -10,11 +10,25 @@ public interface Interface_Request {
     @GET("JETME_PHP/deletable.php")
     Call<PassengerModel> getPassenger();
     //@header('Content-Type: application');
-    @POST("JETME/PHP/new_user.php")
+    @POST("JETME/PHP/freelancedriver.php")
     @FormUrlEncoded
-    Call<Void> Send_Logs(@Field("Username") String Username,@Field("contact") String contact,@Field("Password") String Password);
+    Call<Void> createDriver(
+            @Field("Admin_id") String adminId,
+            @Field("driver_licence") String driverLicense,
+            @Field("FFpassword") String ffPassword,
+            @Field("FF_nam") String ffName,
+            @Field("Flatitudelocation") double latitudeLocation,
+            @Field("Flongitudelocation") double longitudeLocation,
+            @Field("FL_name") String flName,
+            @Field("freelance_id") String freelanceId,
+            @Field("plate_no") String plateNo,
+            @Field("seats") int seats
+    );
+
 }
 //"JETMEPHP/PHP/new_user.php"
 //Call<Void> Send_Logs(@Body PassengerModel passenger);
 //http://192.168.43.81/
 //    @POST("JETME/PHP/new_user.php")
+//JETME/PHP/new_hiredriver.php
+//JETME/PHP/freelancedriver.php
