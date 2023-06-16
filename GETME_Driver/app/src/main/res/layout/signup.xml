@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -21,7 +20,7 @@
         android:layout_gravity="center"
         android:text="@string/sign_up"
         android:textColor="@color/gold_prime"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:textStyle="bold" />
 </LinearLayout>
 
@@ -50,6 +49,7 @@
             android:layout_marginTop="20dp"/>
 
         <EditText
+            android:id="@+id/uploadlicence"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@drawable/android_lar"
@@ -63,14 +63,13 @@
             android:layout_marginEnd="20dp"
             android:layout_marginTop="20dp"/>
         <EditText
-            android:id="@+id/plate_no"
+            android:id="@+id/enter_pass"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@drawable/android_lar"
             android:hint="Enter password"
             android:textColorHint="@color/black"
             android:inputType="textPassword"
-            android:maxLines="1"
             android:textSize="16sp"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
@@ -101,6 +100,7 @@
             android:textSize="16sp" />
 
         <EditText
+            android:id="@+id/carplate"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@drawable/android_lar"
@@ -115,11 +115,11 @@
             android:layout_marginEnd="20dp"
             android:layout_marginTop="20dp"/>
         <EditText
+            android:id="@+id/confirmpass"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@drawable/android_lar"
             android:hint="Confirm password"
-            android:maxLines="1"
             android:textColorHint="@color/black"
             android:inputType="textPassword"
             android:textSize="16sp"
@@ -132,13 +132,29 @@
     </LinearLayout>
 </LinearLayout>
     <EditText
+        android:id="@+id/companyname"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/android_lar"
+        android:hint="Company ID"
+        android:textColorHint="@color/black"
+        android:inputType="number"
+        android:textSize="16sp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"/>
+    <EditText
+        android:id="@+id/phone_number"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="@drawable/android_lar"
         android:hint="Phone Number"
-        android:maxLines="1"
         android:textColorHint="@color/black"
-        android:inputType="number"
+        android:inputType="phone"
         android:textSize="16sp"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
@@ -151,7 +167,7 @@
         android:id="@+id/signupbtn"
         android:text="@string/sign_up"
         android:layout_marginTop="20dp"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
         android:background="@drawable/android_lar"
@@ -176,7 +192,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:id="@+id/signuptolog"
+            android:id="@+id/log"
             android:textSize="25sp"
             android:text="@string/login_up"
             android:textColor="@color/gold_prime"
