@@ -14,9 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
         tools:targetApi="31">
-        <activity
-            android:name="Activity.Activity.main_menu"
-            android:exported="true" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCwsBdxqH38yUxGCqj9Wj0yAf8UPQKt_uQ" />
+
         <activity
             android:name="Activity.Activity.header_nav_bar"
             android:exported="false" />
