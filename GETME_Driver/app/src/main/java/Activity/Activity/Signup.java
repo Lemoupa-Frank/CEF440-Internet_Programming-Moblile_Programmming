@@ -104,7 +104,7 @@ public class Signup extends AppCompatActivity {
                 }
 
                 @Override
-                public void onFailure(@NonNull Call<Void> call, Throwable t) {
+                public void onFailure(@NonNull Call<Void> call, @NonNull Throwable t) {
                     Toast.makeText(Signup.this, t.toString(), Toast.LENGTH_SHORT).show();
                 }
             });
@@ -118,7 +118,8 @@ public class Signup extends AppCompatActivity {
 
                     if (response.isSuccessful()) {
                         Toast.makeText(Signup.this, "User Created", Toast.LENGTH_SHORT).show();
-                      //  Intent intent = new
+                        Intent sign_up = new Intent(Signup.this, Login.class);
+                        startActivity(sign_up);
 
                     } else {
                         Toast.makeText(Signup.this, response.message(), Toast.LENGTH_SHORT).show();
@@ -127,7 +128,7 @@ public class Signup extends AppCompatActivity {
                 }
 
                 @Override
-                public void onFailure(@NonNull Call<Void> call, Throwable t) {
+                public void onFailure(@NonNull Call<Void> call, @NonNull Throwable t) {
                     Toast.makeText(Signup.this, t.toString(), Toast.LENGTH_SHORT).show();
                 }
             });
