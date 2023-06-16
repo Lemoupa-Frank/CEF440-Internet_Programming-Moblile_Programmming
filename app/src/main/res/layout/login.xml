@@ -21,15 +21,14 @@
             android:src="@mipmap/ic_launcher_round"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
-            android:text="Please login to your account"
             android:textColor="@color/gold_prime" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/login_up"
-            android:textColor="@color/gold_prime"
-            android:textSize="40dp"
+            android:textColor="@color/Yellow_prime"
+            android:textSize="50dp"
             android:textStyle="bold" />
 
 
@@ -54,7 +53,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"/>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginStart="20dp"
@@ -68,7 +67,6 @@
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_toStartOf="@+id/passwordicon"
             android:background="@android:color/transparent"
             android:hint="@string/password"
             android:textColorHint="@color/black"
@@ -76,17 +74,7 @@
             android:maxLines="1"
             android:textSize="16sp" />
 
-        <ImageView
-            android:id="@+id/passwordicon"
-            android:layout_width="32dp"
-            android:layout_height="30dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="28dp"
-            android:adjustViewBounds="true"
-            android:padding="10dp"
-            android:src="@drawable/google_icon"/>
-    </RelativeLayout>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/forgotpassword"
