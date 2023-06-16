@@ -23,7 +23,7 @@ import retrofit2.Retrofit;
 
 public class Signup extends AppCompatActivity {
     TextView LOG; Button signup;
-    EditText fname,lname,phone_num,companyname,licence_nu,carplate, enterpass, confirmpass;
+    EditText fname,lname,phone_num,licence_nu,carplate, enterpass, confirmpass;
     String Sfname,Slname,Sphone_num,Scompanyname,Slicence_nu,Scarplate, Senterpass, Sconfirmpass;
     Retrofit retro_obj;
     Spinner sort_spinner;
@@ -82,19 +82,44 @@ public class Signup extends AppCompatActivity {
         });
 
     }
-    public void Create_user(int admin_id,String SSlicence_nu, String SSenterpass,String SSlname, double lat, double lon, String SSfname, String SScarplate, int seats, String Scompanyname )
+    public void Create_user(int admin_id,String SSlicence_nu, String SSenterpass,String SSlname, double lat, double lon, String SSfname, String SScarplate, int seats, String SScompanyname )
     {
 
         Interface_Request interface_request = retro_obj.create(Interface_Request.class);
         //Call<Void> passenger_call = interface_request.Send_Logs(passenger);
         if(Scompanyname.equals("Free Lance")) {
-            Call<Void> passenger_call = interface_request.createDriver(admin_id, SSlicence_nu, SSenterpass, SSlname, 0, 0, SSfname, SScarplate, seats);
+            Call<Void> passenger_call = interface_request.createDriver(admin_id, SSlicence_nu, SSenterpass,  SSfname , lat, lon,SSlname , SScarplate, seats,Sphone_num);
             passenger_call.enqueue(new Callback<Void>() {
                 @Override
                 public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
 
                     if (response.isSuccessful()) {
                         Toast.makeText(Signup.this, "User Created", Toast.LENGTH_SHORT).show();
+
+                    } else
+                    {
+                        Toast.makeText(Signup.this, response.message(), Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+
+                @Override
+                public void onFailure(@NonNull Call<Void> call, @NonNull Throwable t) {
+                    Toast.makeText(Signup.this, t.toString(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+        else
+        {
+            Call<Void> passenger_call = interface_request.createHiredDriver(admin_id, SSlicence_nu, SSenterpass,  SSfname , 0, 0,SSlname , SScompanyname,SScarplate);
+            passenger_call.enqueue(new Callback<Void>() {
+                @Override
+                public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
+
+                    if (response.isSuccessful()) {
+                        Toast.makeText(Signup.this, "User Created", Toast.LENGTH_SHORT).show();
+                        Intent sign_up = new Intent(Signup.this, Login.class);
+                        startActivity(sign_up);
 
                     } else {
                         Toast.makeText(Signup.this, response.message(), Toast.LENGTH_SHORT).show();
@@ -103,14 +128,10 @@ public class Signup extends AppCompatActivity {
                 }
 
                 @Override
-                public void onFailure(@NonNull Call<Void> call, Throwable t) {
+                public void onFailure(@NonNull Call<Void> call, @NonNull Throwable t) {
                     Toast.makeText(Signup.this, t.toString(), Toast.LENGTH_SHORT).show();
                 }
             });
-        }
-        else
-        {
-            Toast.makeText(Signup.this, "Not a Free Lance",Toast.LENGTH_SHORT).show();
         }
     }
 }

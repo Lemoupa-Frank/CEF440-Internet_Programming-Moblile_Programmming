@@ -47,28 +47,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     <EditText
+        android:gravity = "center"
         android:id="@+id/User_Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="textStart"
         android:hint="@string/User_Name"
         android:textColorHint="@color/white_white"
         android:textSize="24sp" />
     <EditText
+        android:gravity = "center"
         android:id="@+id/Telephone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/Telephone"
-        android:textAlignment="textStart"
         android:textColorHint="@color/white_white"
         android:textSize="24sp" />
 
     <EditText
+        android:gravity = "center"
         android:id="@+id/Pick_Location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/Pickup_Location"
-        android:textAlignment="textStart"
         android:textColorHint="@color/white_white"
         android:textSize="24sp" />
 
@@ -77,7 +76,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/Drop_location"
-        android:textAlignment="textStart"
+        android:gravity = "center"
         android:textColorHint="@color/white_white"
         android:textSize="24sp" />
     </LinearLayout>

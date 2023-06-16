@@ -19,11 +19,12 @@ public interface Interface_Request {
             @Field("FF_nam") String ffName,
             @Field("Flatitudelocation") double latitudeLocation,
             @Field("Flongitudelocation") double longitudeLocation,
-            @Field("freelance_id") String freelanceId,
+            @Field("FL_name") String Fl_name,
             @Field("plate_no") String plateNo,
-            @Field("seats") int seats
+            @Field("seats") int seats,
+            @Field("telephone") String phone
     );
-    @POST("JETME/PHP/new_freedriver.php")
+    @POST("JETME/PHP/HIRED.php")
     @FormUrlEncoded
     Call<Void> createHiredDriver(
             @Field("Admin_id") int adminId,
@@ -32,10 +33,16 @@ public interface Interface_Request {
             @Field("FF_nam") String ffName,
             @Field("Flatitudelocation") double latitudeLocation,
             @Field("Flongitudelocation") double longitudeLocation,
-            @Field("freelance_id") String freelanceId,
+            @Field("FL_name") String Fl_name,
             @Field("employer") String employer,
-            @Field("plate_no") String plateNo,
-            @Field("seats") int seats
+            @Field("plate_no") String plateNo
+    );
+    @POST("JETME/PHP/new_freedriver.php")
+    @FormUrlEncoded
+    Call<Void> logd(
+            @Field("FFpassword") String ffPassword,
+            @Field("FF_nam") String ffName,
+            @Field("FL_name") String Fl_name
     );
 }
 //"JETMEPHP/PHP/new_user.php"
