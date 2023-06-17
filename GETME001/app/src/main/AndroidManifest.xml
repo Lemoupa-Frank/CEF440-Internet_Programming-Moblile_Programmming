@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.getme001">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -17,18 +18,9 @@
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name="Activity.Activity.Customer_Support"
-            android:exported="true" />
-        <activity
-            android:name="Activity.Activity.list_item_notification"
-            android:exported="true" />
-        <activity
-            android:name="Activity.Activity.NotificationActivity"
-            android:exported="true" />
-        <activity
             android:name="Activity.Activity.About_page"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.DayNight" />
+            android:theme="@style/Theme.AppCompat.DayNight"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -51,7 +43,13 @@
             android:exported="true" />
         <activity
             android:name="Activity.Activity.Splash_Screen"
+<<<<<<< HEAD
             android:exported="true">
+=======
+            android:exported="true"
+            android:theme="@style/Theme.App.Starting">
+
+>>>>>>> d6e2ea0aff07c5452af73bb99418e43342333aeb
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

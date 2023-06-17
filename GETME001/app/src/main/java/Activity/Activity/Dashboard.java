@@ -34,12 +34,15 @@ import androidx.core.content.ContextCompat;
 
 import java.util.Locale;
 
+import Activity.Activity.Location.GpsTracker;
+
 public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, TextToSpeech.OnInitListener{
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     BottomNavigationView navigationViewdown;
     ActionBarDrawerToggle toggle;
     private MapView maps;
+    double[] Plocation;
 
     // text to speach declarations
 
@@ -60,7 +63,8 @@ public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-
+        Plocation = new double[2];
+        Plocation = getLocation();
         //Text to speach
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.INTERNET}, REQUEST_CODE_PERMISSION);
@@ -162,7 +166,7 @@ public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, 
 
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
-        LatLng location = new LatLng(4.1560, 9.2632); // Set the latitude and longitude of the desired location
+        LatLng location = new LatLng(Plocation[1], Plocation[0]); // Set the latitude and longitude of the desired location
         googleMap.addMarker(new MarkerOptions().position(location).title("Marker"));
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 12));
     }
@@ -232,6 +236,21 @@ public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, 
             textToSpeech.shutdown();
         }
     }
-
+    public double[] getLocation() {
+        double latitude = 0,longitude = 0;
+        double[] Location = new double[2];
+        GpsTracker gpsTracker = new GpsTracker(this);
+        if (gpsTracker.canGetLocation()) {
+            latitude = gpsTracker.getLatitude();
+            longitude = gpsTracker.getLongitude();
+        } else {
+            //gpsTracker.showSettingsAlert();
+            //might cause application to crash
+            Toast.makeText(Dashboard.this,"Enable internet access for better experience",Toast.LENGTH_LONG).show();
+        }
+        Location[0] = longitude;
+        Location[1] = latitude;
+        return Location;
+    }
 
 }

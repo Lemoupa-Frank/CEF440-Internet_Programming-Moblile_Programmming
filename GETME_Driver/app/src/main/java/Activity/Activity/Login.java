@@ -35,7 +35,11 @@ public class Login extends AppCompatActivity {
         lastname = findViewById(R.id.lme);
         password = findViewById(R.id.password);
         username = findViewById(R.id.username);
+<<<<<<< HEAD
         retro_obj= Retrofit_Base_Class.getClient();
+=======
+        retro_obj = Retrofit_Base_Class.getClient();
+>>>>>>> d6e2ea0aff07c5452af73bb99418e43342333aeb
          signup.setOnClickListener(v -> {
             Intent intent = new Intent(Login.this, Signup.class);
             startActivity(intent);

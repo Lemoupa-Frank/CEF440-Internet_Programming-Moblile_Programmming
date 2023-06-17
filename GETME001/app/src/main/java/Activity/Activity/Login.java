@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.getme001.R;
 
 public class Login extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
