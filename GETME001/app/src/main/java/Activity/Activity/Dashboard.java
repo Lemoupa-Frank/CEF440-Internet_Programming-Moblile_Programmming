@@ -105,7 +105,12 @@ public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, 
                 }
                 case R.id.history:
                 {
-                    Toast.makeText(Dashboard.this, "Historypage selected", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Dashboard.this, "History page selected", Toast.LENGTH_SHORT).show();
+                    break;
+                }
+                case R.id.notification:
+                {
+                    startActivity(new Intent(Dashboard.this, NotificationActivity.class));
                     break;
                 }
             }
@@ -136,7 +141,7 @@ public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, 
                 }
                 case R.id.support:
                 {
-                    Toast.makeText(Dashboard.this, "Support selected", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(Dashboard.this, Customer_Support.class));
                     break;
                 }
                 case R.id.account:
@@ -146,8 +151,8 @@ public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, 
                 }
                 case R.id.logout:
                 {
-                    Toast.makeText(Dashboard.this, "Log out selected", Toast.LENGTH_SHORT).show();
-                    break;
+                    finishAffinity();
+                    return true;
                 }
 
 

@@ -164,7 +164,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
 
-                    android:background="@color/gold_prime"
+                    android:background="@color/grey_grey"
 
                     app:layout_constraintStart_toEndOf="parent"
 
@@ -187,7 +187,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/gold_prime"
+            android:background="@color/Yellow_prime"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
             android:orientation="vertical"
             />
