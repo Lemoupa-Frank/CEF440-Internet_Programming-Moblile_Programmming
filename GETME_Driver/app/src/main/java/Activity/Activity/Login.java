@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.getme_driver.R;
 
 import API_Handler.Interface_Request;
+import API_Handler.Retrofit_Base_Class;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -34,6 +35,7 @@ public class Login extends AppCompatActivity {
         lastname = findViewById(R.id.lme);
         password = findViewById(R.id.password);
         username = findViewById(R.id.username);
+        retro_obj= Retrofit_Base_Class.getClient();
          signup.setOnClickListener(v -> {
             Intent intent = new Intent(Login.this, Signup.class);
             startActivity(intent);
