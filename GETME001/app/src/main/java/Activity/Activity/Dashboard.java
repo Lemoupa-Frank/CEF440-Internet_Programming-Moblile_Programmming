@@ -166,6 +166,7 @@ public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, 
 
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
+ // Set the latitude and longitude of the desired location
         LatLng location = new LatLng(Plocation[1], Plocation[0]); // Set the latitude and longitude of the desired location
         googleMap.addMarker(new MarkerOptions().position(location).title("Marker"));
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 12));
