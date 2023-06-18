@@ -37,9 +37,9 @@ public interface Interface_Request {
             @Field("employer") String employer,
             @Field("plate_no") String plateNo
     );
-    @POST("JETME/PHP/new_freedriver.php")
+    @POST("JETME/PHP/freelogin.php")
     @FormUrlEncoded
-    Call<Void> logd(
+    Call<CustomResponse> logd(
             @Field("FFpassword") String ffPassword,
             @Field("FF_nam") String ffName,
             @Field("FL_name") String Fl_name

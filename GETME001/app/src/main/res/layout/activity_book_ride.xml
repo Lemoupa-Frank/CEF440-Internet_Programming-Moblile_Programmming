@@ -67,6 +67,7 @@
         android:gravity = "center"
         android:id="@+id/Pick_Location"
         android:layout_width="match_parent"
+        android:hint="@string/Pickup_Location"
         android:layout_height="wrap_content"
         android:textColorHint="@color/white_white"
         android:textSize="24sp" />

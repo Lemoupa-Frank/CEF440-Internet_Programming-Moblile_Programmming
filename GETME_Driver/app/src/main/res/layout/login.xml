@@ -18,7 +18,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher_round"
+            android:src="@mipmap/app_launcher_round"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:textColor="@color/gold_prime" />

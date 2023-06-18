@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  res/layout/verify_num.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+
+    android:background="@drawable/curve_boarder"
+
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingTop="30dp">
+    <TextView
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Input four Digit Code">
+    </TextView>
+    <TextView
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="681*****88">
+    </TextView>
+</LinearLayout>
+    <LinearLayout
+        android:paddingVertical="30dp"
+        android:layout_width="fill_parent"
+        android:layout_height="110dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <EditText
+            android:maxLength="1"
+            android:layout_margin="8dp"
+            android:textAlignment="center"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:background="@drawable/rounded_square"
+            android:inputType="number"
+            android:padding="5dp"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:maxLength="1"
+            android:layout_margin="8dp"
+            android:textAlignment="center"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:background="@drawable/rounded_square"
+            android:inputType="number"
+            android:padding="5dip"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:maxLength="1"
+            android:layout_margin="8dp"
+            android:textAlignment="center"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:background="@drawable/rounded_square"
+            android:inputType="number"
+            android:padding="5dip"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:maxLength="1"
+            android:layout_margin="8dp"
+            android:textAlignment="center"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:background="@drawable/rounded_square"
+            android:inputType="number"
+            android:padding="5dip"
+            android:importantForAutofill="no" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="180dp"
+        android:gravity="center"
+        android:orientation="vertical">
+        <EditText
+            android:layout_margin="8dp"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Create Password"
+            android:inputType="number"
+            android:padding="5dip" />
+        <EditText
+            android:layout_margin="8dp"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Password"
+            android:inputType="number"
+            android:padding="5dp" />
+        <Button
+            android:id="@+id/verify_num"
+            android:textColor="@color/black_black"
+            android:text="Verify"
+            android:background="@drawable/android_lar"
+            android:layout_width="95dp"
+            android:layout_height="50dp">
+
+        </Button>
+    </LinearLayout>
+</LinearLayout>
