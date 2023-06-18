@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,27 +17,40 @@ public class Customer_Support extends AppCompatActivity {
     private EditText editTextName;
     private EditText editTextPhoneNumber;
     private EditText editTextMessage;
+    private Button buttonSubmit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_support);
 
+
         editTextName = findViewById(R.id.editTextName);
         editTextPhoneNumber = findViewById(R.id.editTextPhoneNumber);
         editTextMessage = findViewById(R.id.editTextMessage);
+        buttonSubmit = findViewById(R.id.login);
+        buttonSubmit.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                sendEmail();
+                Toast.makeText(Customer_Support.this, "The form is submitted ", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
-    public void sendMessage(View view) {
+    private void sendEmail() {
         String name = editTextName.getText().toString();
-        String phoneNumber = editTextPhoneNumber.getText().toString();
+        String email = editTextPhoneNumber.getText().toString();
         String message = editTextMessage.getText().toString();
 
-        // Compose the email intent
-        Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setData(Uri.parse("mailto:https://mail.google.com/mail/u/0/#inbox"));
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Customer Support Request");
-        intent.putExtra(Intent.EXTRA_TEXT, "Name: " + name + "\nPhone Number: " + phoneNumber + "\n\n" + message);
+        // Create the email intent
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("message/rfc822");
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"tamahjustin@gmail.com"});
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Email Form Submission");
+        intent.putExtra(Intent.EXTRA_TEXT, "Name: " + name + "\nEmail: " + email + "\nMessage: " + message);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
