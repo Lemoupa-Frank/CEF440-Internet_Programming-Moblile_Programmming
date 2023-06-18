@@ -118,7 +118,7 @@ public class Signup extends AppCompatActivity {
         }
         else
         {
-            Call<Void> passenger_call = interface_request.createHiredDriver(admin_id, SSlicence_nu, SSenterpass,  SSfname , 0, 0,SSlname , SScompanyname,SScarplate);
+            Call<Void> passenger_call = interface_request.createHiredDriver(admin_id, SSlicence_nu, SSenterpass,  SSfname , Plocation[1],Plocation[0],SSlname , SScompanyname,SScarplate);
             passenger_call.enqueue(new Callback<Void>() {
                 @Override
                 public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
