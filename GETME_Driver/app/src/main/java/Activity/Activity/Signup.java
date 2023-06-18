@@ -13,9 +13,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.getme_driver.R;
+import com.google.android.gms.maps.MapView;
 
 import API_Handler.Interface_Request;
 import API_Handler.Retrofit_Base_Class;
+import Activity.Activity.Location.GpsTracker;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -27,6 +29,9 @@ public class Signup extends AppCompatActivity {
     String Sfname,Slname,Sphone_num,Scompanyname,Slicence_nu,Scarplate, Senterpass, Sconfirmpass;
     Retrofit retro_obj;
     Spinner sort_spinner;
+    private MapView maps;
+    double[] Plocation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +45,8 @@ public class Signup extends AppCompatActivity {
         enterpass = findViewById(R.id.enter_pass);
         confirmpass = findViewById(R.id.confirmpass);
         sort_spinner = findViewById(R.id.sort_spiner);
+        Plocation = new double[2];
+        Plocation = getLocation();
         ArrayAdapter<CharSequence> sort_adapter = ArrayAdapter.createFromResource(this,
                 R.array.sort_spinner_array, R.layout.spinner_design);
         sort_adapter .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -68,7 +75,7 @@ public class Signup extends AppCompatActivity {
                 if(Senterpass.equals(Sconfirmpass))
                 {
                     Toast.makeText(Signup.this, "You can Create an Account", Toast.LENGTH_SHORT).show();
-                    Create_user(1,Slicence_nu,Senterpass,Slname,0,0,Sfname,Scarplate,4,Scompanyname);
+                    Create_user(1,Slicence_nu,Senterpass,Slname,Plocation[1],Plocation[0],Sfname,Scarplate,4,Scompanyname);
                 }
                 else
                 {
@@ -88,7 +95,7 @@ public class Signup extends AppCompatActivity {
         Interface_Request interface_request = retro_obj.create(Interface_Request.class);
         //Call<Void> passenger_call = interface_request.Send_Logs(passenger);
         if(Scompanyname.equals("Free Lance")) {
-            Call<Void> passenger_call = interface_request.createDriver(admin_id, SSlicence_nu, SSenterpass,  SSfname , lat, lon,SSlname , SScarplate, seats,Sphone_num);
+            Call<Void> passenger_call = interface_request.createDriver(admin_id, SSlicence_nu, SSenterpass,  SSfname , Plocation[1],Plocation[0],SSlname , SScarplate, seats,Sphone_num);
             passenger_call.enqueue(new Callback<Void>() {
                 @Override
                 public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
@@ -133,5 +140,21 @@ public class Signup extends AppCompatActivity {
                 }
             });
         }
+    }
+    public double[] getLocation() {
+        double latitude = 0,longitude = 0;
+        double[] Location = new double[2];
+        GpsTracker gpsTracker = new GpsTracker(this);
+        if (gpsTracker.canGetLocation()) {
+            latitude = gpsTracker.getLatitude();
+            longitude = gpsTracker.getLongitude();
+        } else {
+            //gpsTracker.showSettingsAlert();
+            //might cause application to crash
+            Toast.makeText(Signup.this,"Enable internet access for better experience",Toast.LENGTH_LONG).show();
+        }
+        Location[0] = longitude;
+        Location[1] = latitude;
+        return Location;
     }
 }

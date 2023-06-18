@@ -14,7 +14,10 @@ public interface Interface_Request {
     //@header('Content-Type: application');
     @POST("JETME/PHP/new_user.php")
     @FormUrlEncoded
-    Call<Void> Send_Logs(@Field("Username") String Username,@Field("contact") String contact,@Field("Password") String Password);
+    Call<Void> Send_Logs(@Field("Username") String Username,@Field("contact") String contact,@Field("Password") String Password,@Field("longitude") double longitude,@Field("latitude") double latitude);
+    @POST("JETME/PHP/login.php")
+    @FormUrlEncoded
+    Call<CustomResponse> Send_Logs(@Field("Username") String Username,@Field("Password") String Password);
 }
 //"JETMEPHP/PHP/new_user.php"
 //Call<Void> Send_Logs(@Body PassengerModel passenger);

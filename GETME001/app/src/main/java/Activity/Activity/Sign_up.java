@@ -19,6 +19,7 @@ import com.example.getme001.R;
 import API_Handler.Interface_Request;
 import API_Handler.PassengerModel;
 import API_Handler.Retrofit_Base_Class;
+import Activity.Activity.Location.GpsTracker;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -28,6 +29,7 @@ public class Sign_up extends AppCompatActivity {
 
     Button verify_butt; Button skip_butt; Retrofit retro_obj; Button verify_number; EditText Creat_pass, Confirm_pass, phone_num, Username ;
     String phone_number, username;
+    double[] Plocation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +38,8 @@ public class Sign_up extends AppCompatActivity {
         skip_butt = findViewById(R.id.skip_button);
         phone_num = findViewById(R.id.phone_num);
         Username= findViewById(R.id.User_Name);
+        Plocation = new double[2];
+        Plocation = getLocation();
         // instantiating an object of type Retrofit
         retro_obj = Retrofit_Base_Class.getClient();
         // Use the Retrofit object to create an interface object
@@ -80,6 +84,8 @@ public class Sign_up extends AppCompatActivity {
                 {
                     Toast.makeText(Sign_up.this, "User Created",Toast.LENGTH_LONG).show();
                     Create_user(username,phone_number,Confirm_pass.getText().toString());
+                    Intent intent = new Intent(Sign_up.this, Login.class);
+                    startActivity(intent);
                 }
                 else
                 {
@@ -99,7 +105,7 @@ public class Sign_up extends AppCompatActivity {
     {
         Interface_Request interface_request = retro_obj.create(Interface_Request.class);
         //Call<Void> passenger_call = interface_request.Send_Logs(passenger);
-        Call<Void> passenger_call = interface_request.Send_Logs(setUsername,setPassword,setContact);
+        Call<Void> passenger_call = interface_request.Send_Logs(setUsername,setPassword,setContact,Plocation[0],Plocation[1]);
         passenger_call.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
@@ -121,5 +127,21 @@ public class Sign_up extends AppCompatActivity {
                 Toast.makeText(Sign_up.this, t.toString(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    public double[] getLocation() {
+        double latitude = 0,longitude = 0;
+        double[] Location = new double[2];
+        GpsTracker gpsTracker = new GpsTracker(this);
+        if (gpsTracker.canGetLocation()) {
+            latitude = gpsTracker.getLatitude();
+            longitude = gpsTracker.getLongitude();
+        } else {
+            //gpsTracker.showSettingsAlert();
+            //might cause application to crash
+            Toast.makeText(Sign_up.this,"Enable internet access for better experience",Toast.LENGTH_LONG).show();
+        }
+        Location[0] = longitude;
+        Location[1] = latitude;
+        return Location;
     }
 }

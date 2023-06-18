@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -13,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.getme_driver.R;
 
+import API_Handler.CustomResponse;
 import API_Handler.Interface_Request;
 import API_Handler.Retrofit_Base_Class;
 import retrofit2.Call;
@@ -35,12 +35,9 @@ public class Login extends AppCompatActivity {
         lastname = findViewById(R.id.lme);
         password = findViewById(R.id.password);
         username = findViewById(R.id.username);
-<<<<<<< HEAD
+
         retro_obj= Retrofit_Base_Class.getClient();
-=======
-        retro_obj = Retrofit_Base_Class.getClient();
->>>>>>> d6e2ea0aff07c5452af73bb99418e43342333aeb
-         signup.setOnClickListener(v -> {
+        signup.setOnClickListener(v -> {
             Intent intent = new Intent(Login.this, Signup.class);
             startActivity(intent);
         });
@@ -51,7 +48,8 @@ public class Login extends AppCompatActivity {
             Lastname = lastname.getText().toString();
             if(Username.length() > 0 && password.length() > 0 && Lastname.length() > 0)
             {
-                login(Username,Password,Lastname);
+                //login(Username,Password,Lastname);
+                login("hired1","123password","name");
             }
             else
             {
@@ -64,16 +62,20 @@ public class Login extends AppCompatActivity {
     {
         Interface_Request interface_request = retro_obj.create(Interface_Request.class);
         //Call<Void> passenger_call = interface_request.Send_Logs(passenger);
-        Call<Void> passenger_call = interface_request.logd(setPassword,setUsername,setLastname);
-        passenger_call.enqueue(new Callback<Void>() {
+        Call<CustomResponse> passenger_call = interface_request.logd(setPassword,setUsername,setLastname);
+        passenger_call.enqueue(new Callback<CustomResponse>() {
             @Override
-            public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
+            public void onResponse(@NonNull Call<CustomResponse> call, @NonNull Response<CustomResponse> response) {
 
                 if(response.isSuccessful())
                 {
-                    Toast.makeText(Login.this, "Logged in", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(Login.this, Dashboard.class);
-                    startActivity(intent);
+                    CustomResponse custom = response.body();
+                    //CustomResponse customResponse = response.body();
+                    //assert customResponse != null;
+                    assert custom != null;
+                    Toast.makeText(Login.this, custom.getMessage(), Toast.LENGTH_SHORT).show();
+                    // Intent intent = new Intent(Login.this, Dashboard.class);
+                    //startActivity(intent);
                 }
                 else
                 {
@@ -83,9 +85,10 @@ public class Login extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(@NonNull Call<Void> call, Throwable t) {
+            public void onFailure(@NonNull Call<CustomResponse> call, @NonNull Throwable t) {
                 Toast.makeText(Login.this, t.toString(), Toast.LENGTH_SHORT).show();
+                System.out.println(t + "********************************************************************");
             }
         });
     }
-    }
+}

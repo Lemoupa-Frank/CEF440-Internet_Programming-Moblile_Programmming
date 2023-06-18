@@ -79,7 +79,7 @@ public class GpsTracker extends Service implements LocationListener {
                     Log.d("Network", "Network");
                     if (locationManager != null) {
                         location = locationManager.getLastKnownLocation(NETWORK_PROVIDER);
-                               // .getCurrentLocation(NETWORK_PROVIDER,);
+                        // .getCurrentLocation(NETWORK_PROVIDER,);
 
                         if (location != null) {
                             latitude = location.getLatitude();
