@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/buttonBookRide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Book Ride"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="50dp"
+        />
+
+    <Button
+        android:id="@+id/buttonRideHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ride History"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_toEndOf="@id/buttonBookRide"
+        />
+
+    <Button
+        android:id="@+id/buttonNotifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notifications"
+        android:layout_below="@id/buttonBookRide"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="50dp"
+        />
+
+    <Button
+        android:id="@+id/buttonHelpCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Help Center"
+        android:layout_below="@id/buttonRideHistory"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_toEndOf="@id/buttonNotifications"
+        />
+
+</RelativeLayout>

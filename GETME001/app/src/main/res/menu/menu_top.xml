@@ -9,10 +9,7 @@
         android:id="@+id/account"
         android:icon="@drawable/baseline_account_circle_24"
         android:title="ACCOUNT"/>
-    <item
-        android:id="@+id/setting"
-        android:icon="@drawable/baseline_settings_24"
-        android:title="SETTINGS"/>
+
     <item
         android:id="@+id/support"
         android:icon="@drawable/baseline_support_agent_24"
@@ -21,6 +18,10 @@
         android:id="@+id/about"
         android:icon="@drawable/baseline_info_24"
         android:title="ABOUT US"/>
+    <item
+        android:id="@+id/blind_person"
+        android:icon="@drawable/baseline_blind_24"
+        android:title="BLIND PERSON"/>
     <item
         android:id="@+id/logout"
         android:icon="@drawable/baseline_logout_24"

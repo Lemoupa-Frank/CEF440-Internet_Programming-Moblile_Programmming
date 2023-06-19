@@ -134,9 +134,9 @@ public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, 
                     startActivity(new Intent(Dashboard.this, Dashboard.class));
                     break;
                 }
-                case R.id.setting:
+                case R.id.blind_person:
                 {
-                    Toast.makeText(Dashboard.this, "Settings selected", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(Dashboard.this,blind_dashboard.class));
                     break;
                 }
                 case R.id.support:

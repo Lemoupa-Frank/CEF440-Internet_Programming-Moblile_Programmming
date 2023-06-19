@@ -83,7 +83,7 @@
 
     <string name="about_description5">Personalization Options: Tailor the app to your preferences by saving your favorite locations, setting transportation preferences, and receiving personalized recommendations based on your travel history. We believe in providing a personalized experience that meets your specific needs.</string>
     <string name="about_description6">Reliable Support: Our dedicated support team is available to assist you whenever you need assistance or have any inquiries. We value your satisfaction and strive to provide prompt and reliable customer support.</string>
-<string name="name">Enter Names</string>
+    <string name="name">Enter Names</string>
     <string name="Message">Enter your message here</string>
     <string name="customer_support">Contact US</string>
 
