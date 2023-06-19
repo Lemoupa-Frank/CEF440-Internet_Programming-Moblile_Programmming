@@ -15,6 +15,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import android.widget.Toast;
@@ -22,6 +23,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Marker;
 
 
 // Text to speach import
@@ -34,7 +36,15 @@ import androidx.core.content.ContextCompat;
 
 import java.util.Locale;
 
+import API_Handler.CustomResponse;
+import API_Handler.Interface_Request;
+import API_Handler.Retrofit_Base_Class;
+import API_Handler.responsemodel;
 import Activity.Activity.Location.GpsTracker;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, TextToSpeech.OnInitListener{
     DrawerLayout drawerLayout;
@@ -43,6 +53,9 @@ public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, 
     ActionBarDrawerToggle toggle;
     private MapView maps;
     double[] Plocation;
+
+    responsemodel custom;
+    Retrofit retro_obj;
 
     // text to speach declarations
 
@@ -65,6 +78,33 @@ public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, 
         setContentView(R.layout.activity_dashboard);
         Plocation = new double[2];
         Plocation = getLocation();
+        retro_obj = Retrofit_Base_Class.getClient();
+        Interface_Request interface_request = retro_obj.create(Interface_Request.class);
+        //Call<Void> passenger_call = interface_request.Send_Logs(passenger);
+        Call<responsemodel> passenger_call = interface_request.Send_Logs(Plocation[0],Plocation[1]);
+        passenger_call.enqueue(new Callback<responsemodel>() {
+            @Override
+            public void onResponse(@NonNull Call<responsemodel> call, @NonNull Response<responsemodel> response) {
+
+                if(response.isSuccessful())
+                {
+                     custom = response.body();
+                    assert custom != null;
+                    Toast.makeText(Dashboard.this, custom.getD1Name(), Toast.LENGTH_SHORT).show();
+
+                }
+                else
+                {
+                    Toast.makeText(Dashboard.this, response.message(), Toast.LENGTH_SHORT).show();
+                }
+
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<responsemodel> call, Throwable t) {
+                Toast.makeText(Dashboard.this, t.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
         //Text to speach
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.INTERNET}, REQUEST_CODE_PERMISSION);
@@ -168,8 +208,17 @@ public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, 
     public void onMapReady(@NonNull GoogleMap googleMap) {
  // Set the latitude and longitude of the desired location
         LatLng location = new LatLng(Plocation[1], Plocation[0]); // Set the latitude and longitude of the desired location
-        googleMap.addMarker(new MarkerOptions().position(location).title("Marker"));
+        googleMap.addMarker(new MarkerOptions().position(location).title("YOU"));
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 12));
+        if(custom != null)
+        {
+            LatLng locationa = new LatLng(custom.getD1Long(), custom.getD1Lat()); // Set the latitude and longitude of the desired location
+            googleMap.addMarker(new MarkerOptions().position(locationa).title(custom.getD1Name()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+            LatLng locationb = new LatLng(custom.getD2Long(), custom.getD2Lat()); // Set the latitude and longitude of the desired location
+            googleMap.addMarker(new MarkerOptions().position(locationb).title(custom.getD2Name()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+            LatLng locationc = new LatLng(custom.getD3Long(), custom.getD3Lat()); // Set the latitude and longitude of the desired location
+            googleMap.addMarker(new MarkerOptions().position(locationc).title(custom.getD3Name()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+        }
     }
 
     @Override

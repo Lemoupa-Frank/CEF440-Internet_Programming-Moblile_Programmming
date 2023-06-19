@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_black"
+    android:backgroundTintMode="screen"
+    android:orientation="vertical"
+    tools:context="Activity.Activity.Account">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:text="@string/account"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:paddingTop="25dp"
+            android:textColor="@color/Yellow_prime"
+            android:textAlignment="center"
+            android:layout_marginTop="8dp">
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:contentDescription="@string/_0"
+            android:src="@drawable/baseline_account_circle_24"
+            android:paddingTop="10dp"
+            app:tint="@color/Yellow_prime">
+        </ImageView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/white_white"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/icon_name"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/baseline_person_outline_24">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/profile_name"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginStart="30dp"
+                android:text="@string/profile_name"
+                android:textColor="@color/black_black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="TouchTargetSizeCheck">
+
+            </TextView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="18dp"
+            android:background="@color/white_white"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/icon_num"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/_0"
+                android:src="@drawable/baseline_local_phone_24">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/profile_num"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginStart="30dp"
+                android:text="@string/profile_num"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_black"
+                tools:ignore="TouchTargetSizeCheck">
+
+            </TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

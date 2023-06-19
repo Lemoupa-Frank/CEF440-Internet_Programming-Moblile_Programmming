@@ -18,6 +18,12 @@ public interface Interface_Request {
     @POST("JETME/PHP/login.php")
     @FormUrlEncoded
     Call<CustomResponse> Send_Logs(@Field("Username") String Username,@Field("Password") String Password);
+    @POST("JETME/PHP/Book.php")
+    @FormUrlEncoded
+    Call<Void> Send_Logs(@Field("Username") String Username,@Field("contact") String contact,@Field("longitude") double longitude,@Field("latitude") double latitude);
+    @POST("JETME/PHP/getfreetaxilocation.php")
+    @FormUrlEncoded
+    Call<responsemodel> Send_Logs(@Field("longitude") double longitude,@Field("latitude") double latitude);
 }
 //"JETMEPHP/PHP/new_user.php"
 //Call<Void> Send_Logs(@Body PassengerModel passenger);
