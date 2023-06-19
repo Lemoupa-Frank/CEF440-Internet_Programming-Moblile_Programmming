@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Display;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -17,7 +18,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.getme001.R;
 
 import API_Handler.Interface_Request;
-import API_Handler.PassengerModel;
 import API_Handler.Retrofit_Base_Class;
 import Activity.Activity.Location.GpsTracker;
 import retrofit2.Call;
@@ -29,6 +29,8 @@ public class Sign_up extends AppCompatActivity {
 
     Button verify_butt; Button skip_butt; Retrofit retro_obj; Button verify_number; EditText Creat_pass, Confirm_pass, phone_num, Username ;
     String phone_number, username;
+
+    TextView user_num;
     double[] Plocation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +78,8 @@ public class Sign_up extends AppCompatActivity {
         verify_number = dialog.findViewById(R.id.verify_num);
         Creat_pass = dialog.findViewById(R.id.create_pass);
         Confirm_pass = dialog.findViewById(R.id.Conf_pass);
+        user_num = dialog.findViewById(R.id.nummmmm);
+        user_num.setText(phone_number);
         verify_number.setOnClickListener(a->
         {
             if(Confirm_pass.getText().length() != 0 && Creat_pass.getText().length() != 0)

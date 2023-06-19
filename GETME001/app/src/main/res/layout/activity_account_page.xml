@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_black"
+    android:backgroundTintMode="screen"
+    android:orientation="vertical"
+    tools:context="Activity.Activity.Privacy">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:paddingTop="20dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="155dp"
+            android:layout_height="60dp"
+            android:text="@string/privacy_welcome"
+            android:textColor="@color/Yellow_prime"
+            android:textAlignment="center"
+            android:paddingTop="15dp"
+            android:textSize="30sp"
+            android:textStyle="bold">
+        </TextView>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="400dp"
+            android:layout_height="2dp"
+            android:background="@color/Yellow_prime"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/view_policy"
+            android:layout_width="175dp"
+            android:layout_height="45dp"
+            android:text="@string/privacy_policy"
+            android:textSize="25sp"
+            android:paddingTop="10dp"
+            android:textStyle="bold"
+            android:textColor="@color/Yellow_prime"
+            android:textAlignment="center"
+            android:layout_marginTop="8dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/term1"
+            android:layout_width="250dp"
+            android:layout_height="170dp"
+            android:text="@string/privacy_text"
+            android:textColor="@color/white_white"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold">
+        </TextView>
+
+        <Button
+            android:id="@+id/agree_btn"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:text="@string/agree"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black_black"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:backgroundTint="@color/Yellow_prime">
+        </Button>
+
+        <Button
+            android:id="@+id/disagree_btn"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:text="@string/disagree"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black_black"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:backgroundTint="@color/white_white"
+            android:layout_marginTop="10dp">
+        </Button>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp">
+        <View
+            android:id="@+id/view2"
+            android:layout_width="400dp"
+            android:layout_height="2dp"
+            android:background="@color/Yellow_prime" />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -44,6 +44,9 @@ public interface Interface_Request {
             @Field("FF_nam") String ffName,
             @Field("FL_name") String Fl_name
     );
+    @POST("JETME/PHP/getpassengerlocation.php")
+    @FormUrlEncoded
+    Call<responsemodel> Send_Logs(@Field("longitude") double longitude,@Field("latitude") double latitude);
 }
 //"JETMEPHP/PHP/new_user.php"
 //Call<Void> Send_Logs(@Body PassengerModel passenger);
