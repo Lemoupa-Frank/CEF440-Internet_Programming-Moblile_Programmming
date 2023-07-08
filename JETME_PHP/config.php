@@ -3,7 +3,7 @@
 		
 		// Check connection
 		if($conn){
-			echo "connected";
+		//echo "connected";
 		}
 		else
 		{
