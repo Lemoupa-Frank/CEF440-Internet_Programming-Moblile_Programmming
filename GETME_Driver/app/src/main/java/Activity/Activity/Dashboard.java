@@ -45,6 +45,7 @@ public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, 
     private MapView maps;
     double[] Plocation;
 
+    String Closestpss = "No Close Passenger or Crowd";
     responsemodel custom;
     Retrofit retro_obj;
 
@@ -81,7 +82,8 @@ public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, 
                 {
                     custom = response.body();
                     assert custom != null;
-                    Toast.makeText(Dashboard.this, custom.getD1Name(), Toast.LENGTH_SHORT).show();
+                    Closestpss = custom.getD1Name();
+                    Toast.makeText(Dashboard.this, "Welcome", Toast.LENGTH_SHORT).show();
 
                 }
                 else
@@ -152,6 +154,13 @@ public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, 
 
     }
 
+    
+
+
+
+
+
+
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         LatLng location = new LatLng(Plocation[1], Plocation[0]); // Set the latitude and longitude of the desired location
@@ -165,6 +174,7 @@ public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, 
             googleMap.addMarker(new MarkerOptions().position(locationb).title(custom.getD2Name()));
             LatLng locationc = new LatLng(custom.getD3Long(), custom.getD3Lat()); // Set the latitude and longitude of the desired location
             googleMap.addMarker(new MarkerOptions().position(locationc).title(custom.getD3Name()));
+            Closestpss = custom.getD1Name();
         }
     }
 
@@ -212,7 +222,8 @@ public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, 
             if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                 Toast.makeText(this, "Language not supported", Toast.LENGTH_SHORT).show();
             } else {
-                speak("Welcome to JET-ME, Here, you can book a ride, view freelance taxi positions, see your ride history, determine your arrival time, and many more. ");
+              //  speak("Welcome to JET-ME, Here, you can book a ride, view freelance taxi positions, see your ride history, determine your arrival time, and many more. ");
+                speak( Closestpss + "Is close By, Check map to for a crowd ");
             }
         } else {
             Toast.makeText(this, "TextToSpeech initialization failed", Toast.LENGTH_SHORT).show();

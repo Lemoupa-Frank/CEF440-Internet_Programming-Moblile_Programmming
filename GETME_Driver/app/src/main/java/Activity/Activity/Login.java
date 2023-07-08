@@ -49,7 +49,7 @@ public class Login extends AppCompatActivity {
             if(Username.length() > 0 && password.length() > 0 && Lastname.length() > 0)
             {
                 //login(Username,Password,Lastname);
-                login("hired1","123password","name");
+                login(Username,Password,Lastname);
             }
             else
             {
@@ -74,8 +74,15 @@ public class Login extends AppCompatActivity {
                     //assert customResponse != null;
                     assert custom != null;
                     Toast.makeText(Login.this, custom.getMessage(), Toast.LENGTH_SHORT).show();
-                    // Intent intent = new Intent(Login.this, Dashboard.class);
-                    //startActivity(intent);
+                        if(custom.getMessage().equals("HIRED DRIVER") || custom.getMessage().equals("FREE LANCE DRIVER") )
+                        {
+                            Intent intent = new Intent(Login.this, Dashboard.class);
+                            startActivity(intent);
+                        }
+                        else
+                        {
+                            Toast.makeText(Login.this, "Username or Login Falsa", Toast.LENGTH_SHORT).show();
+                        }
                 }
                 else
                 {

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_black"
+    android:orientation="vertical"
+    tools:context="Activity.Activity.book_ride">
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:paddingRight="20dp"
+            android:id="@+id/LETS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/LETS"
+            android:textAlignment="center"
+            android:textColor="@color/gold_prime"
+            android:textSize="44sp" />
+
+        <TextView
+            android:id="@+id/Ride"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/RIDE"
+            android:textAlignment="center"
+            android:textColor="@color/gold_prime"
+            android:textSize="44sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="200dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/jetme_dark_icon"></ImageView>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:gravity = "center"
+            android:id="@+id/User_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/User_Name"
+            android:textColorHint="@color/white_white"
+            android:textSize="24sp" />
+        <EditText
+            android:gravity = "center"
+            android:id="@+id/Telephone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Telephone"
+            android:textColorHint="@color/white_white"
+            android:textSize="24sp" />
+
+        <EditText
+            android:gravity = "center"
+            android:id="@+id/Pick_Location"
+            android:layout_width="match_parent"
+            android:hint="@string/Pickup_Location"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/white_white"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/Drop_Location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Drop_location"
+            android:gravity = "center"
+            android:textColorHint="@color/white_white"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/Book_A_Cap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/android_lar"
+            android:text="@string/Book_A_Cap"
+            android:textColor="@color/black_black"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -186,7 +186,8 @@ public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, 
                 }
                 case R.id.account:
                 {
-                    Toast.makeText(Dashboard.this, " selected", Toast.LENGTH_SHORT).show();
+                    Intent Account_int = new Intent(Dashboard.this, Account.class);
+                    startActivity(Account_int);
                     break;
                 }
                 case R.id.logout:
@@ -265,7 +266,7 @@ public class Dashboard extends AppCompatActivity implements OnMapReadyCallback, 
             if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                 Toast.makeText(this, "Language not supported", Toast.LENGTH_SHORT).show();
             } else {
-                speak("Welcome to JET-ME, Here, you can book a ride, view freelance taxi positions, see your ride history, determine your arrival time, and many more. ");
+                speak("Welcome to JET-ME, Here, you can book a ride, view freelance taxi positions, see your ride history, determine your arrival time, and many more. In case you are blind, you cam ask somebody to help take you to the blind dashboard located in the menu list");
             }
         } else {
             Toast.makeText(this, "TextToSpeech initialization failed", Toast.LENGTH_SHORT).show();
